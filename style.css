@@ -1,0 +1,130 @@
+:root {
+    --white: #e9e9e9;
+    --gray: #333;
+    --blue: #0367a6;
+    --lightblue: #008997;
+
+    --button-radius: 0.7rem;
+
+    --max-width: 758px;
+    --max-height: 420px;
+
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    align-items: center;
+    background-color: var(--white);
+    background: linear-gradient(rgba(21,21,21,0.5), rgba(21,21,21,0.5)), 
+    url("background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+
+.container {
+    background-color: var(--white);
+    border-radius: var(--button-radius);
+    box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
+    0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
+    height: var(--max-height);
+    max-width: var(--max-width);
+    position: relative;
+    width: 100%;
+
+    padding: 1.5rem;
+}
+
+.tag-input {
+    height: 20%;
+    transition: all 0.6s ease-in-out;
+    margin: auto;
+}
+
+#add-tag-button {
+    background-color: var(--lightblue);
+    border-radius: 20px;
+    border: transparent;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    padding: 0.7rem 4rem;
+    transition: transform 80ms ease-in;
+}
+
+#save-tag-list, #load-tag-list {
+    float:right;
+    background-color: rgba(0, 137, 151, 0.8);;
+    border: transparent;
+    color: var(--white);
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 0.3rem;
+    padding: 0.3rem;
+    border-radius: 20px;
+}
+
+#tag-name-field {
+    background-color: #fff;
+    border: none;
+    padding: 0.9rem 0.9rem;
+    margin: 0.5rem 0;
+    width: 50%;
+}
+
+.tag-field {
+    border: 1px solid var(--lightblue);
+    height: 75%;
+    overflow-x: scroll;
+}
+
+.tag {
+    float: left;
+    margin: 0.2rem;
+    padding: 0.2rem;
+    background:rgba(0, 137, 151, 0.5);
+    border-radius: var(--button-radius);
+    animation: appear 0.2s ease-in;
+}
+
+.remove-button {
+    background-color: transparent;
+    border:transparent;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.2rem;
+}
+
+.remove-button:hover, #save-tag-list:hover, #load-tag-list:hover {
+    cursor: pointer;
+    background-color: var(--lightblue);
+}
+
+#add-tag-button:hover {
+    transform:scale(0.97);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
