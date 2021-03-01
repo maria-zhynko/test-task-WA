@@ -53,7 +53,7 @@ function addTag() {
 function saveTagList() {
     if (tagsLabels.length) {
         if (confirm('Are you sure?')) {
-            localStorage.setItem('tagList', tagsLabels);
+            localStorage.setItem('tagList', tagsLabels.join(','));
             alert('Saved!');
         }
         
