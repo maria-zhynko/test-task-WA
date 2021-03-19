@@ -34,7 +34,7 @@ body {
     place-items: center;
 }
 
-.container {
+.tag-container {
     background-color: var(--white);
     border-radius: var(--button-radius);
     box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
@@ -47,13 +47,13 @@ body {
     padding: 1.5rem;
 }
 
-.tag-input {
+.tag-container__tag-input {
     height: 20%;
     transition: all 0.6s ease-in-out;
     margin: auto;
 }
 
-#add-tag-button {
+#tag-container__add-tag-button {
     background-color: var(--lightblue);
     border-radius: 20px;
     border: transparent;
@@ -66,7 +66,7 @@ body {
     transition: transform 80ms ease-in;
 }
 
-#save-tag-list, #load-tag-list {
+#tag-container__save-tag-list, #tag-container__load-tag-list {
     float:right;
     background-color: rgba(0, 137, 151, 0.8);;
     border: transparent;
@@ -79,7 +79,7 @@ body {
     border-radius: 20px;
 }
 
-#tag-name-field {
+#tag-container__tag-name-field {
     background-color: #fff;
     border: none;
     padding: 0.9rem 0.9rem;
@@ -87,7 +87,7 @@ body {
     width: 50%;
 }
 
-.tag-field {
+.tag-container__tag-field {
     border: 1px solid var(--lightblue);
     height: 75%;
     overflow-x: scroll;
@@ -116,7 +116,7 @@ body {
     background-color: var(--lightblue);
 }
 
-#add-tag-button:hover {
+#tag-container__add-tag-button:hover {
     transform:scale(0.97);
 }
 
