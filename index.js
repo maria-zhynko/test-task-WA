@@ -1,12 +1,12 @@
-const readonlyCheckbox = document.querySelector("#readonlyCheckbox");
+const readonlyCheckbox = document.querySelector("#tag-container__readonly-checkbox");
 
-const addTagButton = document.querySelector('#add-tag-button');
-const tagNameField = document.querySelector('#tag-name-field');
+const addTagButton = document.querySelector('#tag-container__add-tag-button');
+const tagNameField = document.querySelector('#tag-container__tag-name-field');
 
-const saveTagListButton = document.querySelector('#save-tag-list');
-const loadTagListButton = document.querySelector('#load-tag-list');
+const saveTagListButton = document.querySelector('#tag-container__save-tag-list');
+const loadTagListButton = document.querySelector('#tag-container__load-tag-list');
 
-const tagField = document.querySelector('.tag-field');
+const tagField = document.querySelector('.tag-container__tag-field');
 
 let removeButtons = [];
 
@@ -17,6 +17,8 @@ addTagButton.addEventListener('click', addTag);
 
 saveTagListButton.addEventListener('click', saveTagList);
 loadTagListButton.addEventListener('click', loadTagList);
+
+tagField.addEventListener('click', removeTag);
 
 let tagsLabels = [];
 
@@ -78,11 +80,12 @@ function loadTagList() {
     });
 }
 
-function removeTag() {
-    let indexOfTag = removeButtons.indexOf(this);
+function removeTag(event) {
+    let indexOfTag = removeButtons.indexOf(event.target);
     tagsLabels.splice(indexOfTag, 1);
     removeButtons.splice(indexOfTag, 1);
-    this.parentNode.remove();
+    if(event.target !== tagField)
+        event.target.parentNode.remove();
 }
 
 function addTagContent(name) {
@@ -99,5 +102,4 @@ function addTagContent(name) {
 
     removeButtons.push(removeTagButton);
     
-    removeButtons[removeButtons.length-1].addEventListener('click', removeTag);
 }
